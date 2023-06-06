@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="image.png" alt="">
+            <h1>Friendship Calculator</h1><br/>
+
+            
+            <div class="inputarea">
+                <input type="text" placeholder="Your Name" id="NameOne" onfocus="this.value = ''">
+                <input type="text" placeholder="Friends Name" id="NameTwo" onfocus="this.value = ''">
+            </div>
+            <br/>
+            
+            <a href="#" onclick="Friends()">Calculate</a>
+            <p id="print">Your result here</p>
+            <p id="statement"></p>
+        </div>
+    </div>
+    <script>
+        function Friends(){
+        var name1 = document.getElementById("NameOne").value;
+        var name2 = document.getElementById("NameTwo").value;
+        if(name1.length<=2){
+            alert("Enter the correct name");
+        }
+        else if(name2.length<=2){
+            alert("naam to sahi daal de");
+        }
+        else{
+            var random = Math.floor(Math.random()*100);
+            document.getElementById("print").innerHTML = name1 + " and " + name2 + " your friendship  %  is " + "=" + random +"%";
+        }
+        
+        if(random<=10 || random<=50){
+            document.getElementById("statement").innerHTML = "Good Friends";
+        }
+        else if(random<=51 || random<=100){
+            document.getElementById("statement").innerHTML = "Best friends";
+        }
+    }
+    </script>
+</body>
+</html>
